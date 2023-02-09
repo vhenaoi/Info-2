@@ -1,6 +1,6 @@
 class ave:
 
-    def __init__(self,tipo,vuela):
+    def __init__(self,tipo,vuela,comida):
         self.ave =  tipo
         self.vuelo = vuela
         self._oviparos = True
@@ -27,7 +27,7 @@ class pato(ganso):
 class gallina(ave):
     pass
 
-p=ave("gallina",False)
+p=ave("gallina","Si")
 p.volar()
 p.comer("Maiz")
 
