@@ -24,3 +24,4 @@ class Perro(Animal):
 mi_perro = Perro('mamífero', 10)
 mi_perro.describeme()
 # Soy un Animal del tipo Perro
+

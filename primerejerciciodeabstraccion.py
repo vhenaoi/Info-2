@@ -1,28 +1,102 @@
-class Hospital():
-    def __init__(self,nombre,cedula,genero):
-        self.nombre = nombre
-        self.cedula = cedula
-        self.genero = genero
-        
-class Paciente(Hospital):
-    def __init__(self,servicio):
+class Persona():
+    def __init__(self):
+        self.__nombre = ""
+        self.__cedula = 0
+        self.__genero = ""
+
+# Setters
+    def asignarNombre(self,nombre):
+        self.__nombre = nombre
+    def asignarCedula(self,cedula):
+        self.__cedula = cedula
+    def asignarGenero(self,genero):
+        self.__genero = genero
+
+# getters 
+    def verNombre(self): 
+        return self.__nombre
+    def verCedula(self):
+        return self.__cedula
+    def verGenero(self):
+        return self.__genero
+
+    def borrarNombre(self):
+        del self.__nombre
+    def borrarCedula(self):
+        del self.__cedula
+    def borrarGenero(self):
+        del self.__genero
+
+    def caminar(self):        
+        print(input("ingrese direccion: "))
+
+    def comer(self):
+        print("El paciente debe comer cada 8 horas")
+
+    def imprimirInfo(self):
+        print (self.__nombre,self.__cedula,self.__genero)
+
+class Paciente(Persona):
+    def __init__(self):
+        Persona.__init__(self)
+        self.__servicio = ""
+
+    def asignarServicio(self, servicio):
         self.__servicio = servicio
-        print('El paciente: ' + self.nombre + ' con cédula: ' + self.cedula + ' es de genero: ' + self.genero + ' se encuentra en el servicio: ' + self.__servicio)
+    def verServicio(self):
+        return self.__servicio
 
-class Enfermero(Hospital):
-    def __ini__(self,turnos,rango):
-        self.__turnos = turnos #7-19, 19-7
-        self.__rango =  rango #auxiliar,jefe,jefe del servicio
-        print('El enfermero a cargo del paciente es: '+ self.nombre + ' con cédula: ' + self.cedula + ' es de genero: ' + self.genero + ' y su rango es: ' + self.__rango + ' esta disponible en el turno: ' + self.__turnos)
+class Empleado_Hospital(Persona):
+    def __init__(self):
+        Persona.__init__(self)
+        self.__turno = {"Mañana":"7-19","Noche":"19-7","Corrido":"Corrido"}
 
-class Medico(Hospital):
-    def __init__(self,turnos,especialidad):
-        self.__turnos = turnos #7-19, 19-7
-        self.__especialidad = especialidad
-        print('El medico a cargo del paciente es: '+ self.nombre + ' con cédula: ' + self.cedula + ' es de genero: ' + self.genero + ' es especoalista en: ' + self.__especialidad + ' y esta disponible en el turno: ' + self.__turnos)
+    def asignarTurno(self, turno):
+        self.__turno = turno
+
+    def verturno(self):
+        return self.__turno
+
+class Enfermera(Empleado_Hospital):
+    def __init__(self):
+        Empleado_Hospital.__init__(self) # Invocando el constructor de la clase padre de la cual esta heredando 
+        # super().__init__() # Este metodo hace exactamente lo mismo que le anterior, invocar el constructor de la clase padre 
+        self.__rango = ''
+
+    def asignarRango(self, rango):
+        self.__rango = rango
+    def verRango(self, rango):
+        return self.__rango
+
+class Medico(Empleado_Hospital):
+    def __init__(self):
+        Empleado_Hospital.__init__(self)
         
+        self.__especialidad = ''
+    
+    def asignarEspecialidad(self, especialidad):
+        self.__especialidad = ''
+    def verEspecialidad(self, especialidad):
+        return self.__especialidad
 
-h = Hospital('Veronica','11221022','F')
-Paciente('general')
-Enfermero('Juan','14532222','M','auxiliar','7-19')
-Medico('Carlos','14532222','M','internista','7-19')
+# k = 9 # objeto de la clase int
+p1 = Paciente()
+p2 = Paciente()
+e1 = Enfermera()
+e1.asignarNombre("Pepito")
+e1.asignarCedula("1345132")
+e1.asignarGenero("F")
+print(e1.verturno()["Mañana"])
+e1.imprimirInfo()
+listaPaciente={}
+
+listaPaciente[123] = p1
+listaPaciente[234] = p2
+# print(listaPaciente)
+
+# pacientes.asignarNombre('Juan José Trejo')
+# pacientes.asignarCedula(1085341857)
+# pacientes.asignarGenero('Masculino')
+# print(pacientes.verNombre())
+# print(pacientes.verCedula())
+# print(pacientes.verGenero())
