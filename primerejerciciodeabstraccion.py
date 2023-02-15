@@ -5,7 +5,8 @@ class Persona():
         self.__genero = ""
 
 # Setters
-    def asignarNombre(self,nombre):
+    def asignarNombre(self,rol):
+        nombre = input('Ingrese el nombre del ' + rol +': ')
         self.__nombre = nombre
     def asignarCedula(self,cedula):
         self.__cedula = cedula
@@ -27,18 +28,15 @@ class Persona():
     def borrarGenero(self):
         del self.__genero
 
-    def caminar(self):        
-        print(input("ingrese direccion: "))
-
-    def comer(self):
-        print("El paciente debe comer cada 8 horas")
-
     def imprimirInfo(self):
         print (self.__nombre,self.__cedula,self.__genero)
 
+    def guardarInfo(self):
+        return self.__nombre,self.__cedula,self.__genero
+
 class Paciente(Persona):
     def __init__(self):
-        Persona.__init__(self)
+        super().__init__()
         self.__servicio = ""
 
     def asignarServicio(self, servicio):
@@ -54,7 +52,7 @@ class Empleado_Hospital(Persona):
     def asignarTurno(self, turno):
         self.__turno = turno
 
-    def verturno(self):
+    def verTurno(self):
         return self.__turno
 
 class Enfermera(Empleado_Hospital):
@@ -65,7 +63,7 @@ class Enfermera(Empleado_Hospital):
 
     def asignarRango(self, rango):
         self.__rango = rango
-    def verRango(self, rango):
+    def verRango(self):
         return self.__rango
 
 class Medico(Empleado_Hospital):
@@ -75,24 +73,23 @@ class Medico(Empleado_Hospital):
         self.__especialidad = ''
     
     def asignarEspecialidad(self, especialidad):
-        self.__especialidad = ''
-    def verEspecialidad(self, especialidad):
+        self.__especialidad = especialidad
+    def verEspecialidad(self):
         return self.__especialidad
 
-# k = 9 # objeto de la clase int
-p1 = Paciente()
-p2 = Paciente()
-e1 = Enfermera()
-e1.asignarNombre("Pepito")
-e1.asignarCedula("1345132")
-e1.asignarGenero("F")
-print(e1.verturno()["Mañana"])
-e1.imprimirInfo()
-listaPaciente={}
-
-listaPaciente[123] = p1
-listaPaciente[234] = p2
-# print(listaPaciente)
+#p1 = Paciente()
+#p2 = Paciente()
+#e1 = Enfermera()
+#e1.asignarNombre("Pepito")
+#e1.asignarCedula("1345132")
+#e1.asignarGenero("F")
+#print(e1.verturno()["Mañana"])
+#e1.imprimirInfo()
+#listaPaciente={}
+#
+#listaPaciente[123] = p1
+#listaPaciente[234] = p2
+#print(listaPaciente)
 
 # pacientes.asignarNombre('Juan José Trejo')
 # pacientes.asignarCedula(1085341857)
