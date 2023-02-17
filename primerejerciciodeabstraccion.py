@@ -50,7 +50,6 @@ class Sistema(Persona):
         self.__lista_genero = []
         self.__diccionario_pacientes = {'Nombre':[],'Cédula':[],'Genero':[]}
         
-    
     def numPacientes(self):
         self.__numero_pacientes = len(self.__lista_pacientes)
         return self.__numero_pacientes
@@ -72,9 +71,9 @@ class Sistema(Persona):
 
     def verDatosPacientesLista(self):
         cedula = str(input('Ingresar la cédula del Paciente que busca en la lista: '))
-        for l in self.__lista_pacientes:
-            if cedula == l[1]:
-                return print(l)
+        for c in self.__lista_pacientes:
+            if cedula == c[1]:
+                return print(c)
             
     def verDatosPacientesDiccionario(self):
         cedula = str(input('Ingresar la cédula del Paciente que busca en el diccionario: '))
