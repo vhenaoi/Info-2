@@ -65,9 +65,10 @@ class Sistema(Persona):
         self.__lista_cedula.append(p.verCedula())
         self.__lista_genero.append(p.verGenero())
         self.__diccionario_pacientes.update({'Nombre':self.__lista_nombre,'Cédula':self.__lista_cedula,'Genero':self.__lista_genero})
-        print(self.__lista_pacientes)
-        print(self.__diccionario_pacientes)
-        print(self.numPacientes())
+        #print(self.__lista_pacientes)
+        #print(self.__diccionario_pacientes)
+        #print(self.numPacientes())
+        print('Se ingreso el paciente: \n' + str(p.guardarInfo()))
 
     def verDatosPacientesLista(self):
         cedula = str(input('Ingresar la cédula del Paciente que busca en la lista: '))
@@ -147,11 +148,19 @@ class Medico(Empleado_Hospital):
 
 def main():
     s = Sistema()
-    s.ingresar('Paciente')
-    s.ingresar('Paciente')
-    s.ingresar('Paciente')
-    s.verDatosPacientesLista()
-    s.verDatosPacientesDiccionario()
+
+    while True:
+        opcion = int(input('1. Ingresar paciente - 2. Ver datos del paciente - 3. Ver el número de pacientes en el sistema - 4. Salir\n Ingrese el número de la opción requerida: '))
+        if opcion == 1:
+            s.ingresar('Paciente')
+        elif opcion == 2:
+            s.verDatosPacientesDiccionario()
+        elif opcion == 3:
+            print(s.numPacientes())
+        elif opcion == 4:
+            break
 
 if __name__ == '__main__':
     main()
+
+                     
