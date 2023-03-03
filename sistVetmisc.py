@@ -1,4 +1,4 @@
-class Medicamento(object):
+class Medicamento:
     def __init__(self):
         self.__nombre = ""
         self.__dosis = 0
@@ -13,7 +13,7 @@ class Medicamento(object):
     def asignarDosis(self,temp):
         self.__dosis = temp
     
-class Mascota(object):
+class Mascota:
     def __init__(self):
         self.__nombre = ""
         self.__tipo = ""
@@ -48,7 +48,7 @@ class Mascota(object):
     def verMedicamentos(self):
         return self.__lista_medicamentos
     
-class Sistema(object):
+class Sistema:
     def __init__(self):
         self.__lista_mascotas = []
     
