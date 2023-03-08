@@ -16,8 +16,8 @@ mycol = mydb["clientes"]
 #    print(x)
 #
 #
-myquery = { "nombre": "Luis", "direccion": 12}
-newvalues = { "$set": { "edad":25} }
+myquery = { "nombre": "Carlos", "direccion": 8}
+newvalues = { "$set": { "marcota":"Lola"} }
 
 mycol.update_one(myquery, newvalues)
 #
