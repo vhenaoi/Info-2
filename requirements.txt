@@ -4,3 +4,7 @@ numpy
 scipy
 pandas
 matplotlib
+pymongo
+seaborn
+pingouin
+
