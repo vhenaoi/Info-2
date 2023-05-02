@@ -38,7 +38,6 @@ while True:
     if k==27: 
         break
 
-
 video.release()
 
 cv2.destroyAllWindows()
