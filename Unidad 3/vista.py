@@ -1,11 +1,9 @@
 # Respuesta grafica
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
-import seaborn as sns
 #importamos las librerías necesarias
 from PyQt5 import QtWidgets, uic
 import pyqtgraph as pg
-from matplotlib.figure import Figure
 import cv2
 
 #Carga la interfaz gráfica y conecta los botones
