@@ -21,7 +21,10 @@ class Ventana(QtWidgets.QMainWindow):
         self.agregar.clicked.connect(self.agregar_dato)
         self.salir.clicked.connect(self.cerrar)
         self.continuar.setEnabled(False)
-        self.continuar.clicked.connect(self.continuar_dato) 
+        self.continuar.clicked.connect(self.continuar_dato)
+        #self.input_nombre.setEnabled(False)
+        #self.input_edad.setEnabled(False) 
+        
 
 
     def conexionconelcontrolador(self,control):
@@ -46,7 +49,10 @@ class Ventana(QtWidgets.QMainWindow):
         self.close()
     
     def continuar_dato(self):
-        self.mi_controlador.cambiarvistaagrafico()
+        if self.input_nombre.text() == '':
+            print("Complete todos los datos")
+        else:
+            self.mi_controlador.cambiarvistaagrafico()
 
 #Carga la interfaz gráfica y conecta los botones
 class Grafica(QtWidgets.QMainWindow):
