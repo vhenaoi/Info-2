@@ -24,3 +24,5 @@ mycol.update_one(myquery, newvalues)
 ##print "clientes" después del update:
 #for x in mycol.find():
 #  print(x)
+
+

@@ -34,7 +34,7 @@ class VentanaPrincipal(QMainWindow):
             mensaje = "Paciente ya existe!!!!"
 
         msj= QMessageBox(self)
-        msj.setIcon(QMessageBox.Information)
+        msj.setIcon(QMessageBox.Warning) #Information
         msj.setText(mensaje)
         msj.show()
             
